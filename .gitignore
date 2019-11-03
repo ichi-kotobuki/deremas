@@ -1,0 +1,11 @@
+*.pyc
+*.pyo
+*.spec
+.mypy_cache
+.venv
+.vscode
+DEREMAS.txt
+
+__pycache__/
+build/
+dist/
