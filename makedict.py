@@ -93,7 +93,7 @@ def make_msime_dict(chars):
 
 
 def read_chars() -> list:
-    with open(os.path.abspath('characters.txt'), encoding='utf-16') as datafile:
+    with open(os.path.abspath('characters.txt'), encoding='utf-8') as datafile:
         r = csv.reader(datafile)
 
         # skip the header row
