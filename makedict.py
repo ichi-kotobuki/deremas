@@ -24,7 +24,7 @@ def make_atok_dict(chars):
                            '固有人他',
                            f'{row[4]}出身・{row[3]}生まれ・{row[5]}' +
                            (f'（CV：{row[15]}）' if row[15] else ''),
-                           'しない', ''])
+                           'しない', f'CV：{row[15]}' if row[15] else ''])
             else:
                 if row[1] == 'トレーナー':
                     altword = '青木明'
@@ -35,13 +35,14 @@ def make_atok_dict(chars):
                 elif row[1] == 'ルーキートレーナー':
                     altword = '青木慶'
                 else:
-                    altword = ''
+                    altword = f'CV：{row[15]}' if row[15] else ''
 
                 if 'とれーなー' in kana[0]:
                     w.writerow([kana[0], row[1],
                                '名詞',
                                f'{row[4]}出身・{row[3]}生まれ・{row[5]}' +
-                               f'（CV：{row[15]}）', 'しない', altword])
+                               f'（CV：{row[15]}）', 'しない',
+                               altword, f'CV：{row[15]}'])
                 else:
                     w.writerow([kana[0], row[1], '固有人他',
                                f'{row[4]}出身・{row[3]}生まれ・{row[5]}' +
