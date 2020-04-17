@@ -17,9 +17,11 @@ def make_atok_dict(chars):
             if len(kana) > 1:
                 name = row[1].split('　')
                 w.writerow([kana[0], name[0],
-                           '固有人姓', f'{name[0]}{name[1]}', 'しない', ''])
+                           '固有人姓', f'{name[0]}{name[1]}（{kana[0]}{kana[1]}）',
+                           'しない', ''])
                 w.writerow([kana[1], name[1],
-                           '固有人名', f'{name[0]}{name[1]}', 'しない', ''])
+                           '固有人名', f'{name[0]}{name[1]}（{kana[0]}{kana[1]}）',
+                           'しない', ''])
                 w.writerow([f'{kana[0]}{kana[1]}', f'{name[0]}{name[1]}',
                            '固有人他',
                            f'{row[4]}出身・{row[3]}生まれ・{row[5]}' +
